@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "signupUsers": [
+    {
+      "username": "Thamali",
+      "email": "tnirmalaadasooriya@gmail.com",
+      "password": "thamali1234",
+      "id": 1
+    },
+    {
+      "username": "Sahan",
+      "email": "kumarasirisahan@gmail.com",
+      "password": "sahan123",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
