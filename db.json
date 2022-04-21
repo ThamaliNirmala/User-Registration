@@ -18,6 +18,30 @@
       "email": "kumarasirisahan@gmail.com",
       "password": "sahan123",
       "id": 2
+    },
+    {
+      "name": "Mithila",
+      "email": "mithila2000@gmail.com",
+      "password": "mithila",
+      "id": 3
+    },
+    {
+      "name": "Nethmi",
+      "email": "nethu@gmail.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "name": "Thamali",
+      "email": "kumarasirisahan@gmail.com",
+      "password": "thama",
+      "id": 5
+    },
+    {
+      "name": "Amali",
+      "email": "asanjeewaniadasuriya@gmail.com",
+      "password": "amali",
+      "id": 6
     }
   ],
   "profile": {

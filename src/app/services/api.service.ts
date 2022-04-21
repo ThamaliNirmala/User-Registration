@@ -6,5 +6,14 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ApiService {
 
+  url = "http://localhost:3000/signupUsers"
   constructor(private http : HttpClient) { }
+
+  users(){
+    return this.http.get(this.url)
+  }
+
+  saveUser(data:any){
+    return this.http.post(this.url,data)
+  }
 }

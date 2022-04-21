@@ -8,7 +8,7 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { NavBarComponent } from './views/nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,11 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'login', component: LoginComponent  },
-      { path: 'signup', component: RegisterComponent  },
-      {path: '', component: HomeComponent}
-    ])
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

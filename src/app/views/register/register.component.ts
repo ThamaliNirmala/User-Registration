@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder} from "@angular/forms"
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,25 +10,26 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  public signupForm !: FormGroup;
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private roter:Router) { }
+  users: any;
+  constructor(private userData : ApiService, private router:Router) {
+    this.userData.users().subscribe((data)=>{
+      this.users = data;
+    })
+   }
 
   ngOnInit(): void {
-    this.signupForm = this.formBuilder.group({
-      username:[''],
-      email :[''],
-      password: ['']
+    
+  }
+
+  getUserFormData(data:any){
+    console.warn(data)
+    this.userData.saveUser(data).subscribe((result)=>{
+      console.warn(result)
+      alert("Signup Successfull")
+      this.router.navigate(['login'])
+    },err=>{
+      alert("Something Went Wrong")
     })
   }
 
-  signup(){
-    this.http.post<any>("http://localhost:3000/signupUsers",this.signupForm.value)
-    .subscribe(res=>{
-      alert("Signup Successfull");
-      this.signupForm.reset();
-      this.roter.navigate(['login'])
-    },err=>{
-      alert("Something went wrong")
-    })
-  }
 }
